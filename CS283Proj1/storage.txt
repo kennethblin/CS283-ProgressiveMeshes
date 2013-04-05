@@ -1,0 +1,138 @@
+    
+    
+    /*moveVerts(edge);
+    combineVerts(edge);
+    deleteEdgeVerts(edge);
+    cleanVertMap(edge);
+    cleanEdgeMap(edge);*/
+    
+    /*cout << i << endl;
+    // this is to check faces
+    cout << "THIS IS THE FACES ASSOCIATED WITH THIS EDGE" << endl;
+    vector< vector<int> > faceCheck = edgeFaceCombo[edge];
+    
+    for (int j = 0; j < faceCheck.size(); j++) {
+        for (int j2 = 0; j2 < faceCheck[j].size(); j2++) {
+            cout << faceCheck[j][j2] << endl;
+        }
+        cout << endl;
+    }
+    
+    cout << endl;
+    // This is to check verts
+    vector<float> v1 = allVerts[edge[0]];
+    vector<float> v2 = allVerts[edge[1]];
+    cout << "THESE ARE THE EDGE VERTECIES" << endl;
+    cout << edge[0] << endl;
+    cout << edge[1] << endl;
+    cout << endl;
+    vector< vector<int> > vert1Check = vertEdgeCombo[v1];
+    vector< vector<int> > vert2Check = vertEdgeCombo[v2];
+    
+    cout << "THESE ARE THE VERTECIES ASSOCIATED WITH VERT 1" << endl;
+    for (int k = 0; k < vert1Check.size(); k++) {
+        for (int k2 = 0; k2 < vert1Check[k].size(); k2++) {
+            cout << vert1Check[k][k2] << endl;
+        }
+        cout << endl;
+    }
+    cout << endl;
+    cout << "THESE ARE THE VERTECIES ASSOCIATED WITH VERT 2" << endl;
+    for (int l = 0; l < vert2Check.size(); l++) {
+        for (int l2 = 0; l2 < vert2Check[l].size(); l2++) {
+            cout << vert2Check[l][l2] << endl;
+        }
+        cout << endl;
+    }
+    cout << endl;
+    cout << "END OF FIRST EDGE COLLAPSE" << endl; */
+    
+}
+
+/*void reverseCollapse() {
+    int lastItem = reverseVerts.size() - 1;
+    if (lastItem >= 0) {
+        vector<int> temp = reverseVerts[lastItem];
+        int v1E = temp[0];
+        int v2E = temp[1];
+
+        vector<float> v1Original = mapOriginalVerts[v1E];
+        vector<float> v2Original = mapOriginalVerts[v2E];
+
+        for (int i = 0; i < v1Original.size(); i++) {
+            //cout << v1Original[i] << endl;
+            //cout << v2Original[i] << endl;
+            allVerts[v1E][i] = v1Original[i];
+            allVerts[v2E][i] = v2Original[i];
+        }
+        reverseVerts.pop_back();
+    }
+} */
+
+
+/*void edgeCollapse(int i) {
+    
+     //DO Quadric Error Metrics here, right now it is averages
+    int v1E = allEdges[i][0];
+    int v2E = allEdges[i][1];
+    
+    //reverseVerts.push_back(allEdges[i]);
+    
+    vector <float> v1 = allVerts[v1E];
+    vector <float> v2 = allVerts[v2E];
+    
+    if (mapOriginalVerts.find(v1E) == mapOriginalVerts.end()) {
+        mapOriginalVerts[v1E] = v1;
+    }
+    
+    if (mapOriginalVerts.find(v2E) == mapOriginalVerts.end()) {
+        mapOriginalVerts[v2E] = v2;
+    }
+    
+    vector <float> avgvert;
+    for (int i = 0; i < v1.size(); i++) {
+        //cout << v1[i] << endl;
+        //cout << v2[i] << endl;
+        float temp = (v1[i] + v2[i]) / 2;
+        avgvert.push_back(temp);
+    }
+    
+    for (int i = 0; i < v1.size(); i++) {
+        allVerts[v1E][i] = avgvert[i];
+        allVerts[v2E][i] = avgvert[i];
+    }
+    
+}
+vector< vector<int> > changeEdgeVal(vector<float> input, int oldV, int newV) {
+    vector< vector<int> > oldEdgeList = vertEdgeCombo[input];
+    vector< vector<int> > answer;
+    for (int i = 0; i < oldEdgeList.size(); i++) {
+        vector<int> temp;
+        
+        // This is to redo the edges to no longer have oldV in them
+        for (int j = 0; j < oldEdgeList[i].size(); j++) {
+            if (oldEdgeList[i][j] != oldV) {
+                temp.push_back(oldEdgeList[i][j]);
+            } else {
+                temp.push_back(newV);
+            }
+        }
+        
+        answer.push_back(temp);
+    }
+    return answer;
+} */
+
+/*void drawLines(int index) {
+    glBegin(GL_LINES);
+    glColor3f(0.0, 0.0, 0.0);
+    drawVertex(allFaces[index][1]);
+    drawVertex(allFaces[index][2]);
+    
+    drawVertex(allFaces[index][2]);
+    drawVertex(allFaces[index][3]);
+    
+    drawVertex(allFaces[index][1]);
+    drawVertex(allFaces[index][3]);
+    glEnd();
+}*/
